@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascipt Guessing Game</title>
+		<meta name="author" content="Zhou JinYu">
+		<script>
+			var color_answer;
+			var guessing_color;
+			var finished = false;
+			var guessing_number  = 1;
+			var colors = ["Cyan","Blue","Gold","Grey","Khaki","Pink","Lime","Olive","Orange","Plum","Purple","Silver","Snow"];
+			colors.sort();
+			
+			function do_game(){
+				color_answer = colors[Math.floor( Math.random() * (colors.length + 1) )];
+				alert(color_answer);
+				while(!finished){
+					guessing_color = prompt("I am thinking of one of these colors:\n\n"+colors[0]+", "+colors[1]+", "+colors[2]+", "+colors[3]+", "+colors[4]+", "+colors[5]+", "+colors[6]+", "+colors[7]+", "+colors[8]+", "+colors[9]+", "+colors[10]+", "+colors[11]+", "+colors[12]+" \n\nWhat color am I thinking of?")
+					if(guessing_color == color_answer)
+						finished = true;
+				}
+			}
+		</script>
+	</head>
+	<body onload = "do_game()">
+	</body>
+</html>

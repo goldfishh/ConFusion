@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dating Web Page</title>
+    <meta name="author" content="ZHOU JINYU">
+</head>
+<body>
+	<div>
+	<h1>Please Enter Your Details For Our Dating Website!</h1>
+	
+	<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctyppe="mutipart/form-data">
+		<fieldset>
+			<legend>Your Face</legend>
+			<label for="fileToUpdate">Your image:</label>
+			<input type="file" name="fileToUpdate" required><br>
+			<label for="image">Image preview:</label>
+			<img id="preview" name="image">
+		</fieldset><br>
+
+	
+		<fieldset>
+			<legend>Your Genaral Details</legend>
+			<label for="yourname">Name:</label>
+			<input type:"text" name="yourname" required><br>
+			<label for="gender">Gender:</label>
+			<input type="radio" name="gender" value="Male" required />Male
+			<input type="radio" name="gender" value="Female" required />Female<br>
+			<label for="age">Age:</label>
+			<input type="number" max="200" min="0" value="18" name="age" required><br>
+			<label for="birthday">Date of birth:</label>
+			<input type="date" name="birthday"><br>
+			<label for="color">Favorite color:</label>
+			<input type="color" name="color"><br>
+			<label for="country">Which country:</label>
+			<select name="country">
+				<option value="America">America</option>
+				<option value="China">China</option>
+				<option value="Canada">Canada</option>  
+				<option value="Japan">Japan</option>
+				<option value="Russia">Russia</option>
+				<option value="noselection">no  selection</option>
+			</select><br>
+		</fieldset><br>
+	
+
+	
+		<fieldset>
+			<legend>Your indicators</legend>
+			<label for="height">Height:Short</label>
+			<input type="range" min="0" max="100" step="5" value="50" name="height">Tall<br>
+			<label for="salary">Salary:Poor</label>
+			<input type="range" min="0" max="100" step="5" value="50" name="salary">Rich<br>
+		</fieldset><br>
+	
+
+	
+		<fieldset>
+			<legend>Your Contact information</legend>
+			<label for="email">Email:</label>
+			<input type="email" name="email" required><br>
+			<label for="tel">Mobile:</label>
+			<input type="tel" name="tel"><br><br>
+			<label for="address">Address:</label>
+			<textarea row="8" cols="60" name="address" ></textarea><br>
+			<label for="application">Method to contact you:</label>
+			<input type="checkbox" name="application" value="Email">Email
+			<input type="checkbox" name="application" value="Whatsapp">Whatsapp
+			<input type="checkbox" name="application" value="In-app chat">In-app chat<br>
+		</fieldset><br>
+
+	<input type="submit" value="Submit!">
+	</form>
+	</div>
+</body>
+</html>

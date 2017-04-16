@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Javascipt Guessing Game</title>
+		<meta name="author" content="Zhou JinYu">
+		<script>
+			var color_answer;
+			var guessing_color;
+			var finished = false;
+			var guessing_number  = 1;
+			var colors = ["Cyan","Blue","Gold","Grey","Khaki","Pink","Lime","Olive","Orange","Plum","Purple","Silver","Snow"];
+			colors.sort();
+			
+			function do_game(){
+				color_answer = colors[Math.floor( Math.random() * (colors.length + 1) )];
+				while(!finished){
+					guessing_color = prompt("I am thinking of one of these colors:\n\n"+colors[0]+", "+colors[1]+", "+colors[2]+", "+colors[3]+", "+colors[4]+", "+colors[5]+", "+colors[6]+", "+colors[7]+", "+colors[8]+", "+colors[9]+", "+colors[10]+", "+colors[11]+", "+colors[12]+" \n\nWhat color am I thinking of?")
+					finished = check_guess();
+				}
+				myBody=document.getElementsByTagName("body")[0];
+				myBody.style.background=color_answer;
+			}
+
+			
+			function check_guess(){
+				if(colors.indexOf(guessing_color) == -1){
+					alert("Sorry, I don't recognize your color.\n\nPlease try again.")
+					guessing_number++;
+					return false;
+				}
+				else if(guessing_color > color_answer){
+					alert("Sorry, your guess is not correct!\n\nHint:your color is alphabetically higher than mine.\n\nPlease try again.")
+					guessing_number++;
+					return false;
+				}
+				else if(guessing_color < color_answer){
+					alert("Sorry, your guess is not correct!\n\nHint:your color is alphabetically lower than mine.\n\nPlease try again.")
+					guessing_number++;
+					return false;
+				}
+				else {
+					alert("Congratulations! You have guessed the color!\n\nIt took you " + guessing_number + " guesses to finish the game!\n\nYou can see the colour in the background.")
+					return true;
+				}
+			}
+		</script>
+	</head>
+	<body onload = "do_game()">
+	</body>
+</html>

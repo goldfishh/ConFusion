@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="author" content="Zhou Jinyu">
+	<title>Goldfish's Page</title>
+</head>
+
+<body>
+	<script>
+		var sir_name;
+		var now_date;
+		function getHour(){
+			var date = new Date();
+			return date.getHours();
+		}
+		function getNowFormatDate() {
+			var date = new Date();
+			var smonth = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+			var month = smonth[date.getMonth()];
+			var ddate = date.getDate();
+			var year = date.getFullYear();
+			var currentdate = month + " " + ddate + "," + year;
+			return currentdate;
+		}
+		getNowFormatDate(now_date);
+		sir_name = prompt("Hello,welcome to my page!\nSo,what is your name,sir?");
+		alert("Welcome!My friend :" + sir_name);
+	</script>
+		<script>if((getHour()+1) >= 6 && (getHour()+1) <= 12) document.write("Good Morning!");
+		else if((getHour()+1) >= 12 && (getHour()+1) <= 18) document.write("Good Afternoon!");
+		else if((getHour()+1) >= 18 && (getHour()+1) <= 24) document.write("Good Evening!");</script>
+		<h1>This is a test page made by goldfish to finish a homework!</h1><br>
+		<h2>Today is : <script>document.write(getNowFormatDate())</script></h2><br>
+		<script>
+			document.write(document.lastModified);
+		</script>
+</body>
+
+</html>
